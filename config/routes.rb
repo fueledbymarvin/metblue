@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope "/api", defaults: { format: :json } do
+    resources :packages, only: [:create]
     resources :searches, only: [:show, :create, :update] do
       resources :packages, only: [:index]
     end
