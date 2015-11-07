@@ -48,4 +48,5 @@ end
 gem 'mongoid', '~> 5.0.0'
 gem 'mongoid-sorted-relations'
 gem 'responders', '~> 2.0'
+gem 'kaminari'
 

@@ -5,7 +5,7 @@ class PackagesController < ApplicationController
     if params[:search_id]
       search = Search.find(params[:search_id])
       if search
-        respond_with search.sorted_packages
+        respond_with Kaminari.paginate_array(search.sorted_packages).page(params[:page]).per(params[:per_page])
       else
         respond_with "Could not find search", status: :unprocessable_entity
       end
