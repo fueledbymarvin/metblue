@@ -46,4 +46,5 @@ group :development do
 end
 
 gem 'mongoid', '~> 5.0.0'
+gem 'responders', '~> 2.0'
 
