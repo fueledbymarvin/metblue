@@ -26,7 +26,7 @@ class SearchesController < ApplicationController
   private
 
   def search_params
-    params.require(:search).permit(destinations: [], regions: [], tags: [], budget: [])
+    params.require(:search).permit(:budget, :start_date, :end_date, tags: [], origin_airports: [], origin_regions: [], destination_airports: [], destination_regions: [])
   end
 
   def set_search
