@@ -1,0 +1,134 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-image: url("http://i.imgur.com/cCdRgFU.jpg")
+}
+
+.container {
+    padding-top: 62.5%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.container.active {
+    cursor: ew-resize;
+}
+
+img,
+.mound-group,
+.houses-group,
+.flbottom-group,
+.blbottom-group,
+.brleg,
+.frleg,
+.blleg,
+.flleg {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+
+.background {
+    position: absolute;
+    bottom: 25.5%;
+    left: 0;
+    width: 100%;
+}
+
+.cloud-bg {
+    bottom: 17%;
+    width: 80%;
+    right: 100%;
+}
+
+.cloud-bg2 {
+    bottom: 17%;
+    width: 80%;
+    right: 100%;
+}
+
+.cloud-shadow1 {
+    bottom: 43%;
+    right: 100%;
+    width: 80%;
+    transform: rotate(5deg);
+}
+
+.cloud1 {
+    bottom: 30%;
+    right: 100%;
+    width: 80%;
+}
+
+.cloud-shadow2 {
+    bottom: 12%;
+    left: 36%;
+    width: 80%;
+    transform: rotate(5deg);
+}
+
+.cloud-shadow3 {
+    bottom: 31%;
+    left: -30%;
+    width: 80%;
+    transform: rotate(5deg);
+}
+
+.cloud2 {
+    bottom: 46%;
+    left: -29%;
+    width: 80%;
+}
+
+.cloud3 {
+    bottom: 38%;
+    left: 17%;
+    width: 80%;
+}
+
+.cloud4 {
+    bottom: 18%;
+    left: -18%;
+    width: 80%;
+}
+
+.cloud5 {
+    bottom: 8%;
+    left: 40%;
+    width: 80%;
+}
+
+.control-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 1);
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    opacity: 0.1;
+    cursor: pointer;
+}
+
+.control-toggle:hover {
+    opacity: 1.0;
+}
+
+.load-gate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding: 20px;
+}
