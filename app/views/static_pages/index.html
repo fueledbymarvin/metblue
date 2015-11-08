@@ -6,9 +6,9 @@
 			nextSelector: 'div.jscroll-next:last',
 			loadingHtml: '<p> askdjahsd</p>',
 			contentSelector: '/api/searches/563e8ed7ab99e70236000000/packages?page=1&per_page=5',
-			callback: $.get( "http://localhost:3000/api/searches/563e8ed7ab99e70236000000/packages?page=1&per_page=5", function(data) {
-			  alert( data );
-			  $( "<p>" + data+ "</p>" ).appendTo( "scroll" );
+			<!-- callback: $.get( "http://localhost:3000/api/searches/563e8ed7ab99e70236000000/packages?page=1&per_page=5", function(data) { -->
+			<!--   alert( data ); -->
+			<!--   $( "<p>" + data+ "</p>" ).appendTo( "scroll" ); -->
 			})
 		})
 	});

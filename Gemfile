@@ -48,3 +48,4 @@ gem 'mongoid-sorted-relations'
 gem 'responders', '~> 2.0'
 gem 'kaminari'
 
+gem 'omniauth-facebook'

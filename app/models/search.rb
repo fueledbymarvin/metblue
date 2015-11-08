@@ -10,11 +10,12 @@ class Search
   field :start_date, type: Date
   field :end_date, type: Date
 
+  embedded_in :user
   has_and_belongs_to_many :packages, inverse_of: nil
 
-  before_create :rank
+  before_save :rank
 
-  # private
+  private
 
   def rank
     packages = []
@@ -131,6 +132,10 @@ class Search
   end
 
   def score_criteria(criteria)
+    if criteria.empty?
+      return 0
+    end
+
     score = 0.0
     max_score = 0.0
     criteria.each do |criterion|

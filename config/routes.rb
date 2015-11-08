@@ -3,10 +3,16 @@ Rails.application.routes.draw do
 
   scope '/api', defaults: { format: :json } do
     resources :packages, only: [:create]
-    resources :searches, only: [:show, :create, :update] do
-      resources :packages, only: [:index]
+    resources :users, only: [:show] do
+      resource :search, only: [:show, :update] do
+        resources :packages, only: [:index]
+      end
     end
   end
+
+  match 'auth/:provider/callback', to: "sessions#create", via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get]
+  match 'logout', to: 'sessions#destroy', as: 'logout', via: [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

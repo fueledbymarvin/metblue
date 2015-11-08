@@ -11,10 +11,6 @@ class SearchesController < ApplicationController
     end
   end
 
-  def create
-    respond_with Search.create(search_params)
-  end
-
   def update
     if @search
       respond_with @search.update_attributes(search_params)
@@ -30,6 +26,6 @@ class SearchesController < ApplicationController
   end
 
   def set_search
-    @search = Search.find(params[:id])
+    @search = User.find(params[:user_id]).search
   end
 end
