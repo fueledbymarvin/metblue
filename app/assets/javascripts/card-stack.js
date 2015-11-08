@@ -1,23 +1,17 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var stack;
+$(document).ready(function(){
+  $('.card').draggable({
+    snap:'#favorites-wrapper',
+    snapMode:"inner",
+    revert:"invalid",
+    snapTolerance:50,
+  });
+  $('#favorites-wrapper').droppable({
+    drop: function(event, ui){
+      $("#favorites").append(ui.draggable);
+      ui.draggable.removeAttr("style");
+      ui.draggable.addClass("favoriteCard");
+    }
+    //tolerance:"touch"
+  });
 
-    stack = gajus.Swing.Stack();
-
-    [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
-        stack.createCard(targetElement);
-
-        targetElement.classList.add('in-deck');
-    });
-
-    stack.on('throwout', function (e) {
-        console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
-
-        e.target.classList.remove('in-deck');
-    });
-
-    stack.on('throwin', function (e) {
-        console.log(e.target.innerText || e.target.textContent, 'has been thrown into the stack from the', e.throwDirection == 1 ? 'right' : 'left', 'direction.');
-
-        e.target.classList.add('in-deck');
-    });
 });

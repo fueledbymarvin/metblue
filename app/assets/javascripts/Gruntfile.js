@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+/*module.exports = function(grunt) {
 
     'use strict';
 
@@ -6,9 +6,7 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        /**
-         * https://github.com/gruntjs/grunt-contrib-jshint
-         */
+
         jshint: {
             options: {
                 curly: true,
@@ -33,9 +31,7 @@ module.exports = function(grunt) {
             }
         },
 
-        /**
-         * https://github.com/gruntjs/grunt-contrib-uglify
-         */
+
         uglify: {
             options: {
                 preserveComments: 'some'
@@ -55,4 +51,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['jshint', 'uglify']);
-};
+};*/
