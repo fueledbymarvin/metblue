@@ -2,20 +2,12 @@ html,
 body {
     height: 100%;
     margin: 0;
-    background-image: url("http://i.imgur.com/cCdRgFU.jpg")
+    background-image: url("bg.jpg")
 }
 
-.container {
-    padding-top: 62.5%;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
 
-.container.active {
-    cursor: ew-resize;
-}
+
+
 
 img,
 .mound-group,
@@ -78,25 +70,25 @@ img,
 }
 
 .cloud2 {
-    bottom: 46%;
+    bottom: 166%;
     left: -29%;
     width: 80%;
 }
 
 .cloud3 {
-    bottom: 38%;
+    bottom: 158%;
     left: 17%;
     width: 80%;
 }
 
 .cloud4 {
-    bottom: 18%;
+    bottom: 138%;
     left: -18%;
     width: 80%;
 }
 
 .cloud5 {
-    bottom: 8%;
+    bottom: 218%;
     left: 40%;
     width: 80%;
 }

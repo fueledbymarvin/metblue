@@ -1,4 +1,4 @@
-var speed = 0.9;
+var speed = 0.1;
 var WIDTH;
 var HEIGHT;
 var castleWidth;
@@ -36,7 +36,7 @@ var draw = function() {
 $(document).on('mousemove', function(e) {
     if (!control) return;
 
-    speed = (1 - (e.clientX / WIDTH) * 2) * 2;
+    speed = (1 - (e.clientX / WIDTH) * 2) / 2;
     
     tl.timeScale(speed);
     tl2.timeScale(speed);
