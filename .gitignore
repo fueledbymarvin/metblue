@@ -17,4 +17,6 @@
 /tmp
 
 #FUCK DS STORE
-*/.DS_STORE
+**/.DS_Store
+
+npm-debug.log
