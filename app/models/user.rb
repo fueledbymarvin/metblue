@@ -7,7 +7,8 @@ class User
   field :oauth_expires_at, type: Time
 
   embeds_one :search
-
+  has_and_belongs_to_many :favorites, inverse_of: nil, class_name: "Package"
+  
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider

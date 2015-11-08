@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resource :search, only: [:show, :update] do
         resources :packages, only: [:index]
       end
+      resources :favorites, only: [:index, :create, :destroy]
     end
   end
 

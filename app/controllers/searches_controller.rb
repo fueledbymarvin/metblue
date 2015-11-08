@@ -5,17 +5,17 @@ class SearchesController < ApplicationController
 
   def show
     if @search
-      respond_with @search, status: :created
+      render json: @search, status: :created
     else
-      respond_with nil, status: :not_found
+      render json: "Could not find search", status: :not_found
     end
   end
 
   def update
     if @search
-      respond_with @search.update_attributes(search_params)
+      render json: @search.update_attributes(search_params)
     else
-      respond_with "Could not find search", status: :not_found
+      render json: "Could not find search", status: :not_found
     end
   end
 

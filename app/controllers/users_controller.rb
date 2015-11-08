@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 
   def show
     if @user
-      respond_with @user, status: :created
+      render json: @user, status: :created
     else
-      respond_with nil, status: :not_found
+      render json: "Could not find user", status: :not_found
     end
   end
 

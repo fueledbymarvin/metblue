@@ -4,15 +4,15 @@ class PackagesController < ApplicationController
   def index
     user = User.find(params[:user_id])
     if user
-      respond_with Kaminari.paginate_array(user.search.sorted_packages)
+      render json: Kaminari.paginate_array(user.search.sorted_packages)
         .page(params[:page]).per(params[:per_page])
     else
-      respond_with "Could not find search", status: :unprocessable_entity
+      render json: "Could not find search", status: :unprocessable_entity
     end
   end
 
   def create
-    respond_with Package.create(package_params), status: :created
+    render json: Package.create(package_params), status: :created
   end
 
   private
