@@ -25,6 +25,8 @@ $(document).ready(function() {
   });
 
   ///
+  //enter: animate from right:200px to right:0px
+  //exit: left:0px to 900px
 
 
   $(window).scroll(function() {
@@ -54,6 +56,10 @@ var generateNewCard = function(info, removeDiv){
       var obj = info.pop(0);
       if(removeDiv){
         console.log("removing div");
+        $("#currentCard").css("left", "0px");
+        $('#currentCard').animate({
+          "left":"900px"
+        });
         $('#currentCard').remove();
       }else{
         $('#currentCard').removeAttr('id');
@@ -76,7 +82,11 @@ var generateNewCard = function(info, removeDiv){
 
 
       var newCard = $(HTMLString);
+      newCard.css("right", "200px");
       $('#cardContainer').append(newCard);
+      newCard.animate({
+        "right":"0px"
+      });
       $('.card').draggable({
         snap:'#favorites-wrapper',
         snapMode:"inner",
@@ -103,6 +113,10 @@ var generateNewCard = function(info, removeDiv){
 
     if(removeDiv){
       console.log("removing Div");
+      $("#currentCard").css("left", "0px");
+      $('#currentCard').animate({
+        "left":"900px"
+      });
       $('#currentCard').remove();
     }else{
       $('#currentCard').removeAttr('id');
@@ -126,7 +140,17 @@ var generateNewCard = function(info, removeDiv){
 
 
     var newCard = $(HTMLString);
+    newCard.css("right", "200px");
     $('#cardContainer').append(newCard);
+    newCard.animate({
+      "right":"0px"
+    });
+    $('.card').draggable({
+      snap:'#favorites-wrapper',
+      snapMode:"inner",
+      revert:"invalid",
+      snapTolerance:50,
+    });
     $('.card').draggable({
       snap:'#favorites-wrapper',
       snapMode:"inner",
