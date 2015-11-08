@@ -1,47 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
 
+<div class="container">
 
-</head>
-<body>
-	<!--<script type="text/javascript">
-		$(document).ready(function() {
-			$(".scroll").jscroll({
-				padding: 20,
-				debug: 'true',
-				nextSelector: 'div.jscroll-next:last',
-				loadingHtml: '<p> askdjahsd</p>',
-				contentSelector: 'li',
-				callback: $.get( "http://metblue.herokuapp.com/api/searches/563def9cc813740003000064/packages?page=1&per_page=5", function(data) {
-				  alert( data );
-				})
-			})
-		});
+    <img class="cloud-bg" src="http://cinemont.com/tutorials/howls/cloud-bg.png">
+    <img class="cloud-bg2" src="http://cinemont.com/tutorials/howls/cloud-bg.png">
 
-	</script>
-	<script>
-		$(document).ready(function(){
-		    $("div").scroll(function(){
-		        $("h3").text( x+= 1);
-		    });
-		  });
-
-	</script>-->
-	<div class="content" >
+    <div class="clouds">
+        <img class="cloud-shadow1" src="http://cinemont.com/tutorials/howls/cloud_shadow-1.png">
+        <img class="cloud-shadow2" src="http://cinemont.com/tutorials/howls/cloud_shadow-1.png">
+        <img class="cloud-shadow3" src="http://cinemont.com/tutorials/howls/cloud_shadow-1.png">
+        <img class="cloud1" src="http://cinemont.com/tutorials/howls/cloud-1.png">
+        <img class="cloud2" src="http://cinemont.com/tutorials/howls/cloud-1.png">
+        <img class="cloud3" src="http://cinemont.com/tutorials/howls/cloud-2.png">
+        <img class="cloud4" src="http://cinemont.com/tutorials/howls/cloud-1.png">
+        <img class="cloud5" src="http://cinemont.com/tutorials/howls/cloud-2.png">
+    </div>
 
 	  <div class="plane-wrapper">
-	      <h3 class="plane" style="z-index: 2">PLANE</h3>
+	      <img src="assets/plane1.png">
 	  </div>
 
 	</div>
 	<div class="crate-wrapper">
 		<div class='crate'>
 					<div class="viewport">
+
 						<ul class="stack" id="cardContainer"> <!--Bottom is first-->
-								<li class="card" id="currentCard">
-								    <div class="box">
+
+								<li class="card" id="currentCard" style="position:relative; top:350px;">
+								    <div class="box" >
+  <ul class="left">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+                                    <ul class="right">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div class="ticket" >
+    <span class="airline">San Francisco to Honolulu Trip</span>
+    <span class="airline airlineslip">Details</span>
+    <div class="content">
+      <span class="origin">SFO</span>
+      <span class="plane"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+      <span class="dest">HNL</span>
+
+      <span class="origin jfkslip">JFK</span>
+      <span class="plane planeslip"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+      <span class="dest sfoslip">HNL</span>
+      <div class="sub-content">
+        <span class="watermark">Jetblue</span>
+        <span class="name">DESTINATION<br><span>Honolulu, Hawaii</span></span>
+        <span class="flight">NIGHTS<br><span>3</span></span>
+        <span class="gate">BEGIN<br><span>11/7</span></span>
+        <span class="seat">END<br><span>11/10</span></span>
+        <span class="boardingtime">HOTEL<br><span>SHERATON DOWNTOWN</span></span>
+
+         <span class="flight flightslip">SUBTOTAL<br><span>$321.76</span></span>
+
+          <span class="seat seatslip">SAVINGS<br><span>$54.00</span></span>
+         <span class="name nameslip">TOTAL<br><span>$375.76</span></span>
+      </div>
+    </div>
+    <div class="barcode"></div>
+    <div class="barcode slip"><a href="#" class="myButton">Check Out</a></div>
+
+
+  </div>
+</div>
+								</li>
+								<li class="card" style="position:relative; top:350px;">
+										 <div class="box">
   <ul class="left">
     <li></li>
     <li></li>
@@ -107,18 +160,97 @@
   </div>
 </div>
 								</li>
+								<li class="card"  style="position:relative; top:350px;">
+										 <div class="box">
+  <ul class="left">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul class="right">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div class="ticket" >
+    <span class="airline">San Francisco to Honolulu Trip</span>
+    <span class="airline airlineslip">Details</span>
+    <div class="content">
+      <span class="origin">SFO</span>
+      <span class="plane"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+      <span class="dest">HNL</span>
+
+      <span class="origin jfkslip">JFK</span>
+      <span class="plane planeslip"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+      <span class="dest sfoslip">HNL</span>
+      <div class="sub-content">
+        <span class="watermark">Jetblue</span>
+        <span class="name">DESTINATION<br><span>Honolulu, Hawaii</span></span>
+        <span class="flight">NIGHTS<br><span>3</span></span>
+        <span class="gate">BEGIN<br><span>11/7</span></span>
+        <span class="seat">END<br><span>11/10</span></span>
+        <span class="boardingtime">HOTEL<br><span>SHERATON DOWNTOWN</span></span>
+
+         <span class="flight flightslip">SUBTOTAL<br><span>$321.76</span></span>
+
+          <span class="seat seatslip">SAVINGS<br><span>$54.00</span></span>
+         <span class="name nameslip">TOTAL<br><span>$375.76</span></span>
+      </div>
+    </div>
+    <div class="barcode"></div>
+    <div class="barcode slip"><a href="#" class="myButton">Check Out</a></div>
+
+
+  </div>
+</div>
+								</li>
 
 						</ul>
 				</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="favorites-wrapper">
       <div class="viewport">
       <ul id="favorites">
-        <li class= "card" id="favorites-placeholder">
+    <!--     <li class= "card" id="favorites-placeholder">
           <p> Put your favorites here</p>
-        </li>
-        <li class="card">
-          	 <div class="box">
+        </li> -->
+        <li class="card" style="position:relative; top:350px;">
+          	 <div class="box" >
   <ul class="left">
     <li></li>
     <li></li>
@@ -188,7 +320,3 @@
     </div>
     </div>
 	</div>
-
-
-</body>
-</html>
