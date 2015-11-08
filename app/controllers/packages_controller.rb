@@ -11,6 +11,15 @@ class PackagesController < ApplicationController
     end
   end
 
+  def show
+    package = Package.find(params[:id])
+    if package
+      render json: package
+    else
+      render json: "Could not find package", status: :not_found
+    end
+  end
+
   def create
     render json: Package.create(package_params), status: :created
   end

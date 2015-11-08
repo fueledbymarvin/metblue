@@ -24,4 +24,11 @@ class User
     end
   end
 
+  def facebook
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
+  end
+
+  def facebook_updates
+    @facebook_updates ||= Koala::Facebook::RealtimeUpdates.new(app_id: ENV["FACEBOOK_KEY"], secret: ENV["FACEBOOK_SECRET"])
+  end
 end

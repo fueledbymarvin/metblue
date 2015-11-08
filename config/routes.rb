@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
 
   scope '/api', defaults: { format: :json } do
-    resources :packages, only: [:create]
+    resources :packages, only: [:show, :create]
+    resources :shares, only: [:create]
     resources :users, only: [:show] do
       resource :search, only: [:show, :update] do
         resources :packages, only: [:index]
