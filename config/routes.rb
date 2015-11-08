@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: [:get]
   match 'logout', to: 'sessions#destroy', as: 'logout', via: [:get]
 
+  match 'flights', to: 'static_pages#flights', as: 'flights', via: [:get]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

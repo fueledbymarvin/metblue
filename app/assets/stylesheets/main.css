@@ -27,9 +27,24 @@
 	z-index:10;
 }
 
-#currentCard{
+.newCard, .currentCard{
 	position:relative;
-	top:350px;
+	top: 500px;
+}
+
+#plane {
+    position: fixed;
+    z-index: 12;
+    width: 24em;
+    left: 50%;
+    margin-left: -12em;
+    top: 120px;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+#plane img {
+    width: 100%;
 }
 
 #favorites-wrapper{
@@ -39,3 +54,47 @@
 	position:absolute;
 	top:730px;
 }
+
+#cardContainer {
+    list-style: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url("login bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#splash {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url("bg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#logo {
+    position: fixed;
+    width: 24em;
+    left: 50%;
+    margin-left: -12em;
+    top: 320px;
+}
+
+#login {
+    position: fixed;
+    width: 16em;
+    left: 50%;
+    margin-left: -8em;
+    top: 560px;
+}
+
+#logo img, #login img {
+    width: 100%;
+}
+
