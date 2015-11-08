@@ -1,4 +1,5 @@
 cache = [];
+page_count = 0;
 $(document).ready(function() {
   //populate user data
   $.ajax({
@@ -14,12 +15,20 @@ $(document).ready(function() {
     console.log(responseObject);
   });
 
+  //dummy switching cards. call this when animating
+  $(document).keydown(function(e){
+    if(e.keyCode === 39){
+      generateNewCard(cache, true);
+      console.log(cache);
+    }
+
+  });
+
+  ///
 
 
-  page_count = 0;
   $(window).scroll(function() {
       if ($(window).scrollTop() > 300) {
-        page_count += 1
         //get data//
         $.get('/api/users/'+currentUser+'/search/packages',
         {page: page_count, per_page:5 }).done(function(response){
@@ -28,28 +37,28 @@ $(document).ready(function() {
           $(window).scrollTop(0);
       }
   });
-  /*$('.content').click(function(){
-    if (cache.length === 0){
-      generateNewCard(null);
-    }else{
-      generateNewCard(cache);
-    }
 
-  })*/
 });
-
-var generateNewCard = function(info){
+//call using generateNewCard(cache)
+var generateNewCard = function(info, removeDiv){
   //make old Div disappear
   //create new Div with info
   //return stored_data, and pop each one out. call function when stored_data list is empty
 
-  if(info === null){
-    var info_b = $.get('/api/users/'+currentUser+'/search/packages',
+  if(info.length === 0){
+    page_count += 1;
+    console.log("generate new cache");
+    var info = $.get('/api/users/'+currentUser+'/search/packages',
     {page: page_count, per_page:5 }).done(function(response){
       info = response;
       var obj = info.pop(0);
-
-      $('#currentCard').remove(); //remove old currentCard
+      if(removeDiv){
+        console.log("removing div");
+        $('#currentCard').remove();
+      }else{
+        $('#currentCard').removeAttr('id');
+      }
+       //remove old currentCard
       //generate new card
       var check_in = obj['check_in'].split('-')[1]+"/"+ obj['check_in'].split('-')[2];
       var check_out = obj['check_out'].split('-')[1]+"/"+ obj['check_out'].split('-')[2];
@@ -68,13 +77,23 @@ var generateNewCard = function(info){
 
       var newCard = $(HTMLString);
       $('#cardContainer').append(newCard);
+      $('.card').draggable({
+        snap:'#favorites-wrapper',
+        snapMode:"inner",
+        revert:"invalid",
+        snapTolerance:50,
+      });
+      console.log(info);
       cache = info;
+      console.log(cache);
       return info;
 
     });
-    return info_b;
+    return info;
 
   }else{
+    console.log("get info from cache");
+    console.log(info);
     var obj;
     if (info instanceof Array){
       obj = info.pop(0);
@@ -82,8 +101,13 @@ var generateNewCard = function(info){
       obj = info;
     }
 
-
-    $('#currentCard').remove(); //remove old currentCard
+    if(removeDiv){
+      console.log("removing Div");
+      $('#currentCard').remove();
+    }else{
+      $('#currentCard').removeAttr('id');
+    }
+     //remove old currentCard
     //generate new card
 
     var check_in = obj['check_in'].split('-')[1]+"/"+ obj['check_in'].split('-')[2];
@@ -103,6 +127,13 @@ var generateNewCard = function(info){
 
     var newCard = $(HTMLString);
     $('#cardContainer').append(newCard);
+    $('.card').draggable({
+      snap:'#favorites-wrapper',
+      snapMode:"inner",
+      revert:"invalid",
+      snapTolerance:50,
+    });
+
     cache = info;
     return info;
   }

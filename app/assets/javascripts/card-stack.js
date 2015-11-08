@@ -10,8 +10,20 @@ $(document).ready(function(){
       $("#favorites").append(ui.draggable);
       ui.draggable.removeAttr("style");
       ui.draggable.addClass("favoriteCard");
+      generateNewCard(cache, false);
+      makeDraggable();
     }
     //tolerance:"touch"
   });
 
+
 });
+
+var makeDraggable = function(){
+  $('.card').draggable({
+    snap:'#favorites-wrapper',
+    snapMode:"inner",
+    revert:"invalid",
+    snapTolerance:50,
+  });
+}

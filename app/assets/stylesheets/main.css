@@ -5,7 +5,10 @@
 	border: 2px solid red;
 }
 
-
+#favHolder{
+	height:250px;
+	width:600px;
+}
 
 .plane-wrapper{
 	width:10%;
@@ -24,10 +27,15 @@
 	z-index:10;
 }
 
+#currentCard{
+	position:relative;
+	top:350px;
+}
+
 #favorites-wrapper{
 	width:600px;
 	height:250px;
 	left:750px;
 	position:absolute;
-	top:450px;
+	top:730px;
 }
