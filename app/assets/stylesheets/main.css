@@ -5,11 +5,32 @@
 	border: 2px solid red;
 }
 
-
+.planes{
+	position: relative;
+	display: block
+	float: left;
+	margin: 0px 10px;
+	padding: 0;
+	/* If you don't want the images in the scroller to be selectable, try the following
+		block of code. It's just a nice feature that prevent the images from
+		accidentally becoming selected/inverted when the user interacts with the scroller. */
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
 
 .plane-wrapper{
-	width:10%;
-	float:left;
+    box-shadow: 1px 1px 10px #999;
+    margin: 2px;
+    max-height: 50px;
+    cursor: pointer;
+    display:inline-block;
+    *display:inline;/* For IE7*/
+    *zoom:1;/* For IE7*/
+    vertical-align:top;
+ }
 }
 
 .crate-wrapper{
