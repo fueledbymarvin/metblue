@@ -49,3 +49,4 @@ gem 'responders', '~> 2.0'
 gem 'kaminari'
 
 gem 'omniauth-facebook'
+gem 'koala'
