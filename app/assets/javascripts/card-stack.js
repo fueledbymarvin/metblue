@@ -63,16 +63,17 @@ $(document).ready(function(){
   $('#favorites-wrapper').click(function(){
     alert("clicked");
     $.ajax({
-      url:'/api/users/563ec9ee853d9855d5000000/search/',
+      url:'/api/users/'+currentUser+'/search/',
       type: 'PUT',
       data: {search: {origin_airport: 'BOS'}}
     }).done(function(response){
       console.log("success?");
       console.log(response);
       //true
-      $.get(
-        '/api/users/563ec9ee853d9855d5000000/search/packages?'
-      )
+      $.get('/api/users/' + currentUser + '/search/packages/',
+      {page: 1, per_page:5 }).done(function(response){
+        console.log(response);
+      });
     }).fail(function(responseObject){
       console.log("error :(");
       console.log(responseObject);
