@@ -29,11 +29,15 @@
 		  });
 
 	</script>-->
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="jquery.infinitescroll.js"></script>
 	<div class="content" >
 
-	  <div class="plane-wrapper">
+	  <div id="scroll" class="plane-wrapper">
 	      <h3 class="plane" style="z-index: 2">PLANE</h3>
+
 	  </div>
+	  <a id="testScroll" class="jscroll" href="index2.html">next page</a>
 
 	</div>
 	<div class="crate-wrapper">
@@ -69,6 +73,25 @@
     </div>
 	</div>
 
-
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#scroll').infinitescroll({
+				navSelector: "#testScroll:last",
+				nextSelector: "#testScroll:last",
+				itemSelector: "#scroll",
+				debug: false,
+				dataType: 'html',
+		    maxPage: 6,
+				path: function(index) {
+					return "index" + index + ".html";
+				}
+				// appendCallback	: false, // USE FOR PREPENDING
+		    }, function(newElements, data, url){
+		      // used for prepending data
+		    	// $(newElements).css('background-color','#ffef00');
+		    	// $(this).prepend(newElements);
+		    });
+		});
+	</script>
 </body>
 </html>
