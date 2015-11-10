@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'static_pages#index'
+  match 'flights', to: 'static_pages#flights', as: 'flights', via: [:get]
+  match 'favorites', to: 'static_pages#favorites', as: 'favorites', via: [:get]
 
   scope '/api', defaults: { format: :json } do
     resources :packages, only: [:show, :create]
@@ -15,8 +17,6 @@ Rails.application.routes.draw do
   match 'auth/:provider/callback', to: "sessions#create", via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get]
   match 'logout', to: 'sessions#destroy', as: 'logout', via: [:get]
-
-  match 'flights', to: 'static_pages#flights', as: 'flights', via: [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
 
   def create
     if @user && @package
-      @user.favorites << @package
+      @user.favorites << @package unless @user.favorites.include?(@package)
       render json: @user.favorites
     else
       render json: "Could not find user", status: :not_found

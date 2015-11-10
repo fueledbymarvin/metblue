@@ -12,7 +12,7 @@
     background-image: url("bg2.jpg");
 }
 
-.static_pages.flights #container {
+.static_pages.flights #container, .static_pages.favorites #container {
     background-image: url("login bg.png");
 }
 
@@ -77,16 +77,82 @@
     margin-left: -12em;
     margin-bottom: 5em;
     z-index: 1;
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
 }
 
 #plane img {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
     width: 100%;
 }
 
 #cardContainer {
     list-style: none;
     position: relative;
+}
+
+.card {
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+}
+
+.static_pages.flights .card {
+    cursor: pointer;
+}
+
+#favorites {
+    position: absolute;
+    font-family: PT Sans;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    background: #4EC000;
+    width: 8em;
+    padding: 0.5em;
+    border-radius: 2em;
+    left: 2em;
+    top: 3.3em;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    opacity: 0;
+}
+
+#favorites a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+}
+
+#favorites.dragging {
+    background: #DB0A5B;
+}
+
+#favorites-container {
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#favorites-container .card {
+    margin: 3em 0;
+}
+
+#favorites-container .box {
+    position: relative;
+    top: auto;
+}
+
+#favorites-container .ticket {
+    position: relative;
+}
+
+#favorites-container .left {
+    z-index: 1;
+}
+
+#favorites-container .right {
+    z-index: 1;
+    left: 600px;
 }
 
