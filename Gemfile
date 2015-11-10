@@ -51,3 +51,4 @@ gem 'kaminari'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'rails_12factor', group: :production
+gem 'jquery-ui-rails'
