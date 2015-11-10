@@ -1,9 +1,16 @@
 $(document).ready(function() {
+    var $window = $(window);
     if ($(".static_pages.flights").length > 0) {
         var cache = [];
-        var page_count = 0;
+        var pageCount = 0;
+        var perPage = 25;
+        var minCached = 10;
+        var scrollDist = 400;
 
-        $("body").css({height: $(window).height() + 800 + "px"});
+        $("body").css({height: $window.height() + scrollDist*1.2 + "px"});
+        $window.resize(function() {
+            $("body").css({height: $window.height() + scrollDist*1.2 + "px"});
+        });
 
         //populate user data
         $.ajax({
@@ -21,21 +28,23 @@ $(document).ready(function() {
             //get data//
             var getData = function() {
                 $.get('/api/users/'+currentUser+'/search/packages',
-                      {page: ++page_count, per_page: 25 }).done(function(response){
-                          cache = cache.concat(response);
-                      });
+                      { page: ++pageCount, per_page: perPage })
+                    .done(function(response){
+                        cache = cache.concat(response);
+                    });
             };
 
             $.get('/api/users/'+currentUser+'/search/packages',
-                  {page: ++page_count, per_page: 25 }).done(function(response){
-                      cache = cache.concat(response);
-                      generateNewCard();
-                  });
-
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 500) {
+                  { page: ++pageCount, per_page: perPage })
+                .done(function(response){
+                    cache = cache.concat(response);
                     generateNewCard();
-                    $(window).scrollTop(0);
+                });
+
+            $window.scroll(function() {
+                if ($window.scrollTop() > scrollDist) {
+                    generateNewCard();
+                    $window.scrollTop(0);
                 }
             });
 

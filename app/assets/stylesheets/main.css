@@ -1,32 +1,82 @@
-.plane-wrapper{
-	width:10%;
-	float:left;
-}
-
-.crate-wrapper{
-	position:relative;
-}
-.crate{
-	top:100px;
-	left:30%;
-	position:absolute;
-}
-.card, #favorites-placeholder{
-	z-index:10;
-}
-
-.newCard, .currentCard{
-	position:relative;
-	top: 500px;
-}
-
-#plane {
+#container {
     position: fixed;
-    z-index: 12;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.static_pages.index #container {
+    background-image: url("bg2.jpg");
+}
+
+.static_pages.flights #container {
+    background-image: url("login bg.png");
+}
+
+#main {
+    position: relative;
+    top: 50px;
+}
+
+@media screen and (min-height: 640px) {  
+    .static_pages.index #main {
+        top: 200px;
+    }
+
+    .static_pages.flights #main {
+        top: 100px;
+    }
+}
+
+@media screen and (min-height: 768px) {  
+    .static_pages.index #main {
+        top: 300px;
+    }
+
+    .static_pages.flights #main {
+        top: 140px;
+    }
+}
+
+@media screen and (min-height: 960px) {  
+    .static_pages.index #main {
+        top: 380px;
+    }
+
+    .static_pages.flights #main {
+        top: 210px;
+    }
+}
+
+#logo {
+    position: relative;
     width: 24em;
     left: 50%;
     margin-left: -12em;
-    top: 120px;
+    margin-bottom: 3em;
+}
+
+#login {
+    position: relative;
+    width: 16em;
+    left: 50%;
+    margin-left: -8em;
+}
+
+#logo img, #login img {
+    width: 100%;
+}
+
+#plane {
+    position: relative;
+    width: 24em;
+    left: 50%;
+    margin-left: -12em;
+    margin-bottom: 5em;
+    z-index: 1;
     -webkit-animation-duration: 3s;
     animation-duration: 3s;
 }
@@ -35,54 +85,8 @@
     width: 100%;
 }
 
-#favorites-wrapper{
-	width:600px;
-	height:250px;
-	left:750px;
-	position:absolute;
-	top:730px;
-}
-
 #cardContainer {
     list-style: none;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    background-image: url("login bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
-#splash {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    background-image: url("bg2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
-#logo {
-    position: fixed;
-    width: 24em;
-    left: 50%;
-    margin-left: -12em;
-    top: 320px;
-}
-
-#login {
-    position: fixed;
-    width: 16em;
-    left: 50%;
-    margin-left: -8em;
-    top: 560px;
-}
-
-#logo img, #login img {
-    width: 100%;
+    position: relative;
 }
 
